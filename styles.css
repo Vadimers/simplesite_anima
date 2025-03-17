@@ -1,0 +1,174 @@
+/* CSS-змінні */
+:root {
+    --primary-color: #34547A;
+    --text-color: #727272;
+    --white: #ffffff;
+    --section-bg: #EEEFF1;
+    --nav-text: #000000;
+    --background-color: #f5f6fa; /* Світлий фон */
+    --accent-color: #8e44ad; /* Фіолетовий для іконок */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-base: 16px;
+    --font-size-heading: 48px;
+    --font-size-subheading: 24px;
+}
+
+/* Скидання стилів */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    max-width: 1920px; /* Максимальна ширина сторінки */
+    margin: 0 auto; /* Центрування */
+}
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Навігація */
+.nav {
+    padding: 79px 0;
+    background-color: var(--section-bg);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 42px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--nav-text);
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--primary-color);
+}
+
+/* Секція Hero */
+.hero {
+    background-color: var(--section-bg);
+    padding: 151px 0 146px;
+    text-align: left;
+}
+
+.hero h1 {
+    color: #000;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+.hero p {
+    max-width: 540px;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px 41px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #2a4361;
+}
+
+/* Секція Обо мне */
+.about {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    color: #000;
+    margin-bottom: 30px;
+}
+
+/* Секція Stats */
+.stats {
+    background-color: var(--primary-color);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+}
+
+.stat-item img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Секція Как я работаю */
+.work {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--section-bg);
+}
+
+.work h2 {
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.work p {
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.video {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.video iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Футер */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: left;
+    padding: 40px 380px;
+}
+
