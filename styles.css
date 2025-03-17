@@ -5,12 +5,17 @@
     --white: #ffffff;
     --section-bg: #EEEFF1;
     --nav-text: #000000;
-    --background-color: #f5f6fa; /* Світлий фон */
-    --accent-color: #8e44ad; /* Фіолетовий для іконок */
+    --background-color: #f5f6fa;
+    --accent-color: #8e44ad;
     --font-family: 'Roboto', sans-serif;
     --font-size-base: 16px;
     --font-size-heading: 48px;
     --font-size-subheading: 24px;
+    --padding-base: 20px;
+    --padding-large: 100px;
+    --container-max-width: 1110px;
+    --nav-gap: 42px;
+    --stats-gap: 40px;
 }
 
 /* Скидання стилів */
@@ -21,19 +26,19 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-size: var(--font-size-base);
     color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.6;
-    max-width: 1920px; /* Максимальна ширина сторінки */
-    margin: 0 auto; /* Центрування */
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .container {
-    max-width: 1110px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 var(--padding-base);
 }
 
 /* Навігація */
@@ -45,14 +50,14 @@ body {
 .nav-list {
     display: flex;
     justify-content: flex-start;
-    gap: 42px;
+    gap: var(--nav-gap);
     list-style: none;
 }
 
 .nav-list a {
     text-decoration: none;
     color: var(--nav-text);
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-weight: 400;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -71,7 +76,7 @@ body {
 
 .hero h1 {
     color: #000;
-    font-size: 48px;
+    font-size: var(--font-size-heading);
     font-weight: 500;
     margin-bottom: 60px;
 }
@@ -80,7 +85,7 @@ body {
     max-width: 540px;
     margin-bottom: 60px;
     color: var(--text-color);
-    font-size: 16px;
+    font-size: var(--font-size-base);
     line-height: 26px;
 }
 
@@ -89,7 +94,7 @@ body {
     color: var(--white);
     padding: 20px 41px;
     border: none;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-weight: 400;
     text-transform: uppercase;
     cursor: pointer;
@@ -102,7 +107,7 @@ body {
 
 /* Секція Обо мне */
 .about {
-    padding: 100px 20px;
+    padding: var(--padding-large) var(--padding-base);
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
@@ -116,11 +121,11 @@ body {
 /* Секція Stats */
 .stats {
     background-color: var(--primary-color);
-    padding: 100px 20px;
+    padding: var(--padding-large) var(--padding-base);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: var(--stats-gap);
 }
 
 .stat-item {
@@ -137,7 +142,7 @@ body {
 
 /* Секція Как я работаю */
 .work {
-    padding: 100px 20px;
+    padding: var(--padding-large) var(--padding-base);
     text-align: center;
     background-color: var(--section-bg);
 }
@@ -168,7 +173,154 @@ body {
 footer {
     background-color: var(--primary-color);
     color: var(--white);
-    text-align: left;
-    padding: 40px 380px;
+    padding: 40px var(--padding-base);
 }
 
+footer .container {
+    text-align: left;
+}
+
+/* Медіа-запити для респонсивності */
+@media (max-width: 1024px) {
+    .nav-list {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+    }
+
+    .stats {
+        gap: 20px;
+    }
+
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .work .video {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav {
+        padding: 30px 0;
+    }
+
+    .hero {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .about {
+        padding: 50px var(--padding-base);
+    }
+
+    .stats {
+        padding: 50px var(--padding-base);
+    }
+
+    .stat-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .work {
+        padding: 50px var(--padding-base);
+    }
+
+    .work .video {
+        max-width: 80%;
+    }
+
+    footer .container {
+        text-align: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .nav-list {
+        gap: 10px;
+    }
+
+    .nav {
+        padding: 20px 0;
+    }
+
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .about {
+        padding: 30px var(--padding-base);
+    }
+
+    .stats {
+        padding: 30px var(--padding-base);
+        gap: 10px;
+    }
+
+    .stat-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stat-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .work {
+        padding: 30px var(--padding-base);
+    }
+
+    .work .video {
+        max-width: 70%;
+    }
+
+    footer {
+        padding: 20px var(--padding-base);
+    }
+
+    footer .container {
+        text-align: center;
+    }
+}
